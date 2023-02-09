@@ -18,23 +18,29 @@ import TemplateReference from "./components/TemplateReference.vue";
 // 3. reactive
 
 import { reactive, computed } from "vue";
+import PropsComponent from "./components/PropsComponent.vue";
 
 const state = reactive({
   num1: 0,
   num2: 0,
   result: computed(() => parseInt(state.num1) + parseInt(state.num2)),
 });
+const changeTitle = (title) => {
+  console.log(title);
+};
 </script>
 
 <template>
   <ListenerComponent />
   <br />
   <TemplateReference />
+  <br />
   <!-- <input type="text" v-model="state.num1" />
   <span>+</span>
   <input type="text" v-model="state.num2" />
   <span>=</span>
   <input type="text" v-model="state.result" /> -->
+  <PropsComponent title="传递Props" @change-title="changeTitle" />
 </template>
 
 <style scoped></style>

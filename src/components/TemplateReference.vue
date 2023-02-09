@@ -15,7 +15,7 @@ onMounted(() => {
 <template>
   <!-- <input type="text" ref="input" /> -->
   <!-- 2. 函数引用 -->
-  <input v-if="visible" type="text" :ref="(el) => el.focus()" />
+  <input v-if="visible" type="text" :ref="(el) => el?.focus()" />
 </template>
 
 <style scoped></style>

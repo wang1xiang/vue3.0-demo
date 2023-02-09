@@ -1,6 +1,6 @@
 # vue3.0-demo
 
-This template should help get you started developing with Vue 3 in Vite.
+学习vue3语法
 
 ## Recommended IDE Setup
 
