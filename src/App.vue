@@ -19,6 +19,8 @@ import TemplateReference from "./components/TemplateReference.vue";
 
 import { reactive, computed } from "vue";
 import PropsComponent from "./components/PropsComponent.vue";
+import SlotComponent from "./components/SlotComponent.vue";
+import DynamicComponent from "./components/DynamicComponent.vue";
 
 const state = reactive({
   num1: 0,
@@ -41,6 +43,10 @@ const changeTitle = (title) => {
   <span>=</span>
   <input type="text" v-model="state.result" /> -->
   <PropsComponent title="传递Props" @change-title="changeTitle" />
+  <br />
+  <SlotComponent> 这是传递给子组件插槽的内容 </SlotComponent>
+  <br />
+  <DynamicComponent />
 </template>
 
 <style scoped></style>
