@@ -21,6 +21,8 @@ import { reactive, computed } from "vue";
 import PropsComponent from "./components/PropsComponent.vue";
 import SlotComponent from "./components/SlotComponent.vue";
 import DynamicComponent from "./components/DynamicComponent.vue";
+import AttributeComponent from "./components/AttributeComponent.vue";
+import MultipleRootAttributeComponent from "./components/MultipleRootAttributeComponent.vue";
 
 const state = reactive({
   num1: 0,
@@ -30,6 +32,8 @@ const state = reactive({
 const changeTitle = (title) => {
   console.log(title);
 };
+
+const handleClick = () => console.log("父组件handleClick");
 </script>
 
 <template>
@@ -47,6 +51,14 @@ const changeTitle = (title) => {
   <SlotComponent> 这是传递给子组件插槽的内容 </SlotComponent>
   <br />
   <DynamicComponent />
+  <br />
+  <AttributeComponent class="parent" @click="handleClick" />
+  <br />
+  <MultipleRootAttributeComponent @click="handleClick" />
 </template>
 
-<style scoped></style>
+<style scoped>
+.parent {
+  background-color: #ccc;
+}
+</style>
