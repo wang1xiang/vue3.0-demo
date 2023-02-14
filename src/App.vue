@@ -23,6 +23,7 @@ import SlotComponent from "./components/SlotComponent.vue";
 import DynamicComponent from "./components/DynamicComponent.vue";
 import AttributeComponent from "./components/AttributeComponent.vue";
 import MultipleRootAttributeComponent from "./components/MultipleRootAttributeComponent.vue";
+import NameSlotComponent from "./components/NameSlotComponent.vue";
 
 const state = reactive({
   num1: 0,
@@ -55,6 +56,17 @@ const handleClick = () => console.log("父组件handleClick");
   <AttributeComponent class="parent" @click="handleClick" />
   <br />
   <MultipleRootAttributeComponent @click="handleClick" />
+  <br />
+  <NameSlotComponent>
+    <template #header="headerProps"> 标题部分 {{ headerProps }} </template>
+    <template #default="contentProps">
+      内容部分 {{ contentProps.text }}</template
+    >
+    <template #footer="{ text, color }">
+      底部部分
+      <span :style="{ color: color }">{{ text }}{{ color }}</span>
+    </template>
+  </NameSlotComponent>
 </template>
 
 <style scoped>

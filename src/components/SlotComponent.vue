@@ -2,7 +2,7 @@
   <div>
     插槽组件
     <br />
-    <slot />
+    <slot>这是默认内容</slot>
   </div>
 </template>
 
