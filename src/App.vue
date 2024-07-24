@@ -24,6 +24,7 @@ import DynamicComponent from "./components/DynamicComponent.vue";
 import AttributeComponent from "./components/AttributeComponent.vue";
 import MultipleRootAttributeComponent from "./components/MultipleRootAttributeComponent.vue";
 import NameSlotComponent from "./components/NameSlotComponent.vue";
+import ProvideComponent from "./components/ProvideComponent/index.vue";
 
 const state = reactive({
   num1: 0,
@@ -67,6 +68,8 @@ const handleClick = () => console.log("父组件handleClick");
       <span :style="{ color: color }">{{ text }}{{ color }}</span>
     </template>
   </NameSlotComponent>
+  <br />
+  <ProvideComponent />
 </template>
 
 <style scoped>
